@@ -1,0 +1,6 @@
+Gross Sales = CALCULATE(SUMX(FactOrderItems,FactOrderItems[quantity]*FactOrderItems[unit_price]),FactOrders[order_status]="Completed")
+Completed Orders = CALCULATE(DISTINCTCOUNT(FactOrders[order_id]),FactOrders[order_status]="Completed")
+Average Order Value = DIVIDE([Gross Sales],[Completed Orders])
+Units Sold = CALCULATE(SUM(FactOrderItems[quantity]),FactOrders[order_status]="Completed")
+Estimated Contribution = CALCULATE(SUMX(FactOrderItems,FactOrderItems[quantity]*(FactOrderItems[unit_price]-FactOrderItems[estimated_unit_cost])),FactOrders[order_status]="Completed")
+Estimated Gross Margin % = DIVIDE([Estimated Contribution],[Gross Sales])
