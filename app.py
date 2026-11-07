@@ -109,7 +109,7 @@ with left:
     fig.update_layout(template="plotly_white",height=340,margin=dict(l=18,r=18,t=55,b=15),xaxis_title="Sales (₹)",yaxis_title="",font_color="#46564B")
     st.plotly_chart(fig,use_container_width=True,config={"displayModeBar":False})
 with right:
-    items=view.groupby("item_name",as_index=False).agg(Units=("quantity","sum"),Sales=("revenue","sum"),Contribution=("contribution","sum"))
+    items=view.groupby(["item_name","category"],as_index=False).agg(Units=("quantity","sum"),Sales=("revenue","sum"),Contribution=("contribution","sum"))
     fig=px.scatter(items,x="Units",y="Contribution",size="Sales",color="category",hover_name="item_name",title="Menu item volume vs contribution",labels={"Units":"Units sold","Contribution":"Estimated contribution (₹)"},color_discrete_sequence=["#47745A","#D3A85E","#8FA59A","#8B7760","#6B7F91"])
     fig.update_layout(template="plotly_white",height=340,margin=dict(l=18,r=18,t=55,b=15),font_color="#46564B",legend_title="Category")
     st.plotly_chart(fig,use_container_width=True,config={"displayModeBar":False})
