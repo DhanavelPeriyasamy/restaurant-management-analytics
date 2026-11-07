@@ -68,3 +68,17 @@ Python/Pandas, synthetic data generation, relational schema design, SQL joins/CT
 
 ## Author
 **Dhanavel Periyasamy** · Data Analytics Portfolio
+
+## Interactive web dashboard
+
+The repository includes a browser-based Streamlit dashboard in `app.py`. It provides date, menu-category, order-channel and customer-segment filters, revenue and order KPIs, interactive sales charts, an ordering-time heatmap, and CSV export.
+
+### Publish the dashboard
+
+1. Open [Streamlit Community Cloud](https://share.streamlit.io/) and sign in with the GitHub account that owns this repository.
+2. Select **Create app** and choose **Yup, I have an app**.
+3. Set repository to `DhanavelPeriyasamy/restaurant-management-analytics`, branch to `main`, and main file path to `app.py`.
+4. Choose a memorable app URL if available, then select **Deploy**.
+5. When deployment finishes, copy the public app URL into your resume and this README.
+
+The app creates its synthetic CSV data on first launch if the files are not present. All transactions and customer records are fictional. See [Streamlit's deployment guide](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy).
