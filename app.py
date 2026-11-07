@@ -33,7 +33,7 @@ data["estimated_contribution"] = data["revenue"] - data["estimated_cost"]
 data["order_date"] = data["order_datetime"].dt.date
 data["month"] = data["order_datetime"].dt.to_period("M").astype(str)
 
-st.set_page_config(page_title="Restaurant Sales | Analytics", page_icon="🍽️", layout="wide")
+
 st.title("Restaurant Sales & Menu Performance")
 st.caption("Understand revenue mix, ordering patterns and estimated contribution · Fictional portfolio dataset")
 
